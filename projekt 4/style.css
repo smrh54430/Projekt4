@@ -83,7 +83,7 @@ section img {
 }
 .fællesskab{
     width: 200px;
-    height: 200px;
+    height: 150px;
     margin-right: 10px;
 }
 
@@ -166,7 +166,7 @@ section img {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 #profil p {

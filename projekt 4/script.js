@@ -1,5 +1,6 @@
+console.log("testing123");
 function openCommunity() {
-    window.location.href = "community.html"; // Navigerer til community.html
+    window.location.href = "community.html";
 }
 function becomeVolunteer() {
     window.location.href = "frivillig.html"; 
@@ -15,7 +16,7 @@ function joinCommunity() {
 }
 
 function processPayment() {
-    var confirmation = confirm("Er du sikker på, at du vil foretage betalingen?");
+    let confirmation = confirm("Er du sikker på, at du vil foretage betalingen?");
     
     if (confirmation) {
        // denne husker dig på at udfylde betalingsformularen korrekt
@@ -48,15 +49,32 @@ document.addEventListener("DOMContentLoaded", function() {
     const chatMessages = document.getElementById("chat-messages");
     const messageInput = document.getElementById("message-input");
     const sendButton = document.getElementById("send-button");
+    const chatMessagesArray = []; // Array til at gemme chatbeskeder
+
+    function addMessage(sender, message) {
+        const timestamp = new Date(); 
+        const newMessage = {
+            sender: sender,
+            message: message,
+            timestamp: timestamp
+        };
+        chatMessagesArray.push(newMessage);
+    }
 
     sendButton.addEventListener("click", function() {
         const messageText = messageInput.value;
         if (messageText.trim() !== "") {
+            addMessage("Bruger", messageText);
+
             const messageElement = document.createElement("div");
             messageElement.className = "message";
-            messageElement.textContent = messageText;
+            const lastMessage = chatMessagesArray[chatMessagesArray.length - 1];
+            const formattedTimestamp = lastMessage.timestamp.toLocaleString(); // Formater tidsstempel
+            messageElement.textContent = `${lastMessage.sender} skriver: ${lastMessage.message} (tid: ${formattedTimestamp})`;
             chatMessages.appendChild(messageElement);
             messageInput.value = "";
         }
     });
 });
+
+

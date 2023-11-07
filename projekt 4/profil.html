@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>netværket</title>
+    <title>Netværket</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
@@ -22,9 +22,14 @@
             <input type="tel" id="phone" name="phone" placeholder="Indtast telefonnummer">
             <label for="address">Adresse:</label>
             <input type="text" id="address" name="address" placeholder="Indtast adresse">
-            <label for="address">Køn:</label>
-            <input type="text" id="køn" name="køn" placeholder="Indtast køn">
-            <button type="submit" class="orangeknap">Gem Profil</button>
+            <label for="køn">Køn:</label>
+            <select id="køn" name="køn">
+                <option value="mand">Mand</option>
+                <option value="kvinde">Kvinde</option>
+                <option value="anden">Andet</option>
+            </select>
+            <button type="submit" class="orangeknap" id="loginButton">Gem Profil</button>
+            <button type="submit">Allerede medlem? Log ind</button>
         </form>
     </section>
 
